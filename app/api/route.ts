@@ -1,4 +1,3 @@
-export const dynamic = 'force-dynamic' // defaults to auto
 import { type NextRequest, NextResponse} from 'next/server'
 const path = require('path');
 const axios = require('axios');
