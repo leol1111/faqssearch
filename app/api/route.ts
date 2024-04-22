@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextRequest, NextResponse } from 'next/server'; 
 const path = require('path');
 const axios = require('axios');
 const { GoogleAuth } = require('google-auth-library');
@@ -7,7 +7,7 @@ const keyFilePath = path.join('app/api/evident-wind-244909-85c5678c9875.json');
 
 
 
-export async function POST(req: NextApiRequest) {
+export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const auth = new GoogleAuth({
       keyFile: keyFilePath,
@@ -27,8 +27,8 @@ export async function POST(req: NextApiRequest) {
       'Content-Type': 'application/json',
     };
     
-    const requestBody = req.body;
-    console.log(requestBody)
+    const bodyJson = await req.json();
+    console.log(bodyJson)
     
     const data = JSON.stringify({
       query: "animals",
