@@ -28,8 +28,8 @@ export async function POST(req: NextApiRequest) {
       'Content-Type': 'application/json',
     };
     
-    const dataBody = req.body
-    console.log(data)
+    const requestBody = req.body;
+    console.log(requestBody)
     
     const data = JSON.stringify({
       query: "animals",
