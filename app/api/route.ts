@@ -8,7 +8,7 @@ const keyFilePath = path.join('app/api/evident-wind-244909-85c5678c9875.json');
 
 
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: Request) {
   try {
     const auth = new GoogleAuth({
       keyFile: keyFilePath,
@@ -28,11 +28,11 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
       'Content-Type': 'application/json',
     };
     
-    const bodyJson  = await new Response(req.body).json();
-    console.log(bodyJson)
+    const body = await new Response(req.body).json();
+    console.log(body)
     
     const data = JSON.stringify({
-      query: "animals",
+      query: body.query,
       pageSize: 5,
       queryExpansionSpec: { condition: "DISABLED", "pinUnexpandedResults": false },
       spellCorrectionSpec: { mode: "AUTO" },
