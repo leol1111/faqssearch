@@ -21,6 +21,10 @@ const nextConfig = {
             key: "Access-Control-Allow-Headers",
             value: "Content-Type, Authorization",
           },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
+          }
         ],
       },
     ];
