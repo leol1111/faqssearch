@@ -35,7 +35,7 @@ export default function SearchInput() {
   const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
         try {
-        const response = await axios.post(`${process.env.baseUrl}/api`, { query }) 
+        const response = await axios.post('/api', { query }) 
     
         const resultItems: ResultItem[] = response.data.results.map((item: any) => ({
           id: item.id,
