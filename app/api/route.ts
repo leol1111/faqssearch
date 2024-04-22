@@ -8,6 +8,7 @@ const keyFilePath = path.join('app/api/evident-wind-244909-85c5678c9875.json');
 
 
 export async function POST(req: Request) {
+  console.log('req url',req.url)
   try {
     const auth = new GoogleAuth({
       keyFile: keyFilePath,
