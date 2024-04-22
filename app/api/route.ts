@@ -40,10 +40,10 @@ export async function POST(req: Request) {
 
 
     const response = await axios.post(url,data, {headers})
-    return NextResponse.json(response.data); 
+    return Response.json(response.data); 
 
 
   } catch (error) {
-    return NextResponse.json({ error: 'Discovery Engine API Error' });
+    return Response.json({ error: 'Discovery Engine API Error' });
   }
 }
