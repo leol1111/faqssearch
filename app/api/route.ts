@@ -1,5 +1,4 @@
-import { type NextRequest, NextResponse} from 'next/server'
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
 const path = require('path');
 const axios = require('axios');
 const { GoogleAuth } = require('google-auth-library');
