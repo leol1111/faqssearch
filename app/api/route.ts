@@ -1,4 +1,3 @@
-export const dynamic = 'force-dynamic' // defaults to auto
 import type { NextApiRequest, NextApiResponse } from 'next'
 const path = require('path');
 const axios = require('axios');
