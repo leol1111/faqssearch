@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',
   env: {
-        baseUrl: 'https://leol1111.github.io/faqssearch/',
+        baseUrl: 'https://leol1111.github.io/faqssearch',
       },
 };
 
