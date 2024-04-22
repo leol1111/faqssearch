@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'; 
+export const dynamic = 'force-dynamic' // defaults to auto
+import type { NextApiRequest, NextApiResponse } from 'next'
 const path = require('path');
 const axios = require('axios');
 const { GoogleAuth } = require('google-auth-library');
@@ -7,7 +8,7 @@ const keyFilePath = path.join('app/api/evident-wind-244909-85c5678c9875.json');
 
 
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextApiRequest, res: NextApiResponse) {
   try {
     const auth = new GoogleAuth({
       keyFile: keyFilePath,
@@ -27,7 +28,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       'Content-Type': 'application/json',
     };
     
-    const bodyJson = await req.json();
+    const bodyJson  = await new Response(req.body).json();
     console.log(bodyJson)
     
     const data = JSON.stringify({
