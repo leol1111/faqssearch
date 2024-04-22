@@ -16,7 +16,6 @@ export async function POST(req: Request) {
     
     const client = await auth.getClient();
     const accessToken = await client.getAccessToken();
-    console.log(accessToken)
 
  
 
@@ -31,7 +30,7 @@ export async function POST(req: Request) {
     console.log(body)
     
     const data = JSON.stringify({
-      query: body.query,
+      query: "animals",
       pageSize: 5,
       queryExpansionSpec: { condition: "DISABLED", "pinUnexpandedResults": false },
       spellCorrectionSpec: { mode: "AUTO" },
